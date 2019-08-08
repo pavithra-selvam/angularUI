@@ -8,6 +8,10 @@ export const routes: Routes = [
     loadChildren: "./modules/contacts/contacts.module#ContactsModule"
   },
   {
+    path: "programs",
+    loadChildren: "./modules/programs/programs.module#ProgramsModule"
+  },
+  {
     path: "bulk-upload",
     loadChildren: "./modules/bulk-upload/bulk-upload.module#BulkUploadModule"
   },

@@ -31,6 +31,25 @@ export const sitemap: Link[] = [
     ]
   },
   {
+    label: "Programs",
+    path: null,
+    icon: "address-book",
+    children: [
+      {
+        label: "Programs",
+        path: "programs",
+        icon: "address-book",
+        children: []
+      },
+      {
+        label: "Add Program",
+        path: "programs/add-edit",
+        icon: "plus",
+        children: []
+      }
+    ]
+  },
+  {
     label: "Bulk Upload",
     path: "bulk-upload",
     icon: "upload",

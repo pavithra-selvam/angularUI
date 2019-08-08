@@ -1,9 +1,9 @@
 import { HttpHeaders } from "@angular/common/http";
 import { environment } from "./../../../environments/environment";
-// import { Injectable } from "@angular/core";
-// import { Observable } from "rxjs";
-// import { Select, Store } from "@ngxs/store";
-// import { HttpClient } from "@angular/common/http";
+ import { Injectable } from "@angular/core";
+ import { Observable } from "rxjs";
+ import { Select, Store } from "@ngxs/store";
+ import { HttpClient } from "@angular/common/http";
 
 // Default HTTP headerOptions
 export const httpOptions = {
@@ -33,5 +33,12 @@ export const endpoints = {
   constants: { fetch: "constants" },
   contacts: {
     fetch: "contacts",
+  }
+};
+
+export const pgmendpoints = {
+  constants: { fetch: "constants" },
+  programs: {
+    fetch: "programs",
   }
 };

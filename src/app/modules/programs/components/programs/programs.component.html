@@ -1,0 +1,14 @@
+<app-data-table 
+  [tableId]="tableId" 
+  [addLabel]="addLabel" 
+  [addRoute]="addRoute" 
+  [columns]="columns" 
+  [rows]="rows" 
+  [totalRecords]="totalRecords$ | async" 
+  [tableHeightStatic]="tableHeight" 
+  [rowHeight]="rowHeight" 
+  (fetchDataCallback)="fetchPrograms($event[0])"
+  [searchParams]="searchParams" 
+  [searchInputExists]="searchInputExists"
+  [frameworkComponents]="frameworkComponents">
+</app-data-table>

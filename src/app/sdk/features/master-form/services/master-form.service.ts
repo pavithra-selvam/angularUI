@@ -25,6 +25,7 @@ export class MasterFormService {
     });
   }
   submitForm(form, formId) {
+    console.log('form data',form);
     (<any>Object).values(form.controls).forEach(control => {
       control.markAsDirty();
     });

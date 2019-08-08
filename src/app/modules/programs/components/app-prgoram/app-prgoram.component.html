@@ -1,0 +1,89 @@
+<app-master-form
+    [formId]="formId"
+    [recordId]="recordId"
+    [Form]="ProgramForm"
+    [formTitle]="formTitle"
+    [formSubmitted]="formSubmitted"
+    [submittingForm]="submittingForm"
+    [showNotification]="showNotification"
+    [notificationMessage]="notificationMessage"
+    [formCloseNavigationRoute]="formCloseNavigationRoute">
+<ng-template #formRef>
+        <form [formGroup]="ProgramForm" (ngSubmit)="submitForm()" ngxsForm="Programs.programForm" >
+            <mat-card-content>
+                <mat-accordion multi="true">
+                    <mat-expansion-panel [expanded]="true" disabled>
+                        <!-- <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="false">
+                            <mat-label>Incident Date</mat-label>
+                            <input [ngClass]="{ 'filled': isFilled('incidentDate') }" matInput readonly required [matDatepicker]="idpicker" placeholder="Choose a date"
+                                (focus)="idpicker.open()" formControlName="incidentDate" [max]="curDate">
+                            <mat-datepicker-toggle matSuffix [for]="idpicker"></mat-datepicker-toggle>
+                            <mat-datepicker #idpicker></mat-datepicker>
+                            <mat-error>Invalid Date</mat-error>
+                        </mat-form-field> -->
+                        <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="false">
+                            <mat-label>Program Name</mat-label>
+                            <input matInput required placeholder="Program Name" formControlName="programName">
+                            <mat-error>Invalid Program Name</mat-error>
+                        </mat-form-field>
+                      <br>
+                      <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="true">
+                          <mat-label>Start Date</mat-label>
+                          <input matInput readonly [matDatepicker]="startpicker" placeholder="Choose a date"
+                              (focus)="startpicker.open()" formControlName="startDate">
+                          <mat-datepicker-toggle matSuffix [for]="startpicker"></mat-datepicker-toggle>
+                          <mat-datepicker #startpicker></mat-datepicker>
+                          <mat-error>Invalid Date</mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="true">
+                        <mat-label>End Date</mat-label>
+                        <input matInput readonly [matDatepicker]="endpicker" placeholder="Choose a date"
+                            (focus)="endpicker.open()" formControlName="endDate">
+                        <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                        <mat-datepicker #endpicker></mat-datepicker>
+                        <mat-error>Invalid Date</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="false">
+                        <mat-label>Venue</mat-label>
+                        <input matInput required placeholder="Venue" formControlName="venue">
+                        <mat-error>Invalid Venue</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="false">
+                        <mat-label>City</mat-label>
+                        <input matInput required placeholder="City" formControlName="city">
+                        <mat-error>Invalid City</mat-error>
+                    </mat-form-field>
+                    <br>                    
+                    <mat-form-field class="minimum-side-padding one-third-block" appearance="outline" [hideRequiredMarker]="false">
+                        <mat-label>State</mat-label>
+                        <input matInput required placeholder="State" formControlName="state">
+                        <mat-error>Invalid State</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="minimum-side-padding one-third-block" appearance="outline">
+                      <mat-select placeholder="Country" formControlName="country" required>
+                          <ng-container *ngFor="let country of countryOptions">
+                              <mat-option [value]="country.value">{{country.label}}</mat-option>
+                          </ng-container>
+                      </mat-select>
+                      <mat-error>Please select a country</mat-error>
+                  </mat-form-field>
+                        
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-card-content> 
+            <!-- <mat-card-actions class="ims-card-actions">
+            
+                <button mat-raised-button type="button" color="warn" (click)="onClearClick()">clear</button>
+                <button mat-raised-button type="submit" color="accent" class="submit-btn">Report</button>
+                <button mat-raised-button type="button" color="primary" class="submit-btn" (click)="saveDraftReport()">Save</button>
+            </mat-card-actions>
+            <div class="loading-indicator" *ngIf="callInProgress">
+                <mat-spinner></mat-spinner>
+            </div> -->
+        <button mat-raised-button style="margin: 10px; float: right;" type="button" color="primary" class="submit-btn" (click)="submitForm()">
+            {{submittingForm ? 'Saving...' : 'Save'}}</button>
+        <button mat-raised-button style="margin:10px; float: left;" (click)="cancelForm()" color="accent" class="submit-btn">Cancel</button>
+        </form>
+    </ng-template>
+</app-master-form>
